@@ -1,0 +1,645 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>THE CAPTAIN GYM</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #080808;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* HEADER */
+
+        header {
+            background: linear-gradient(135deg, #050505, #191919);
+            text-align: center;
+            padding: 35px 20px;
+            border-bottom: 3px solid #d4af37;
+        }
+
+        .logo {
+            width: 180px;
+            max-width: 80%;
+            margin-bottom: 15px;
+        }
+
+        header h1 {
+            font-size: 38px;
+            color: #d4af37;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            color: #ccc;
+            margin-top: 5px;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 45px 0;
+        }
+
+        .title {
+            text-align: center;
+            color: #d4af37;
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+
+        .card {
+            background: #151515;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+            color: #ddd;
+            font-size: 17px;
+        }
+
+        /* GALLERY */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid #333;
+        }
+
+        /* INFO */
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .info-card h3 {
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+
+        .info-card p {
+            color: #ddd;
+        }
+
+        /* PLANS */
+
+        .plans {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .plan {
+            background: #151515;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .plan h3 {
+            color: #d4af37;
+            margin-bottom: 12px;
+        }
+
+        .price {
+            font-size: 27px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .month {
+            color: #aaa;
+        }
+
+        /* COACH */
+
+        .coach {
+            text-align: center;
+        }
+
+        .coach img {
+            width: 260px;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 3px solid #d4af37;
+        }
+
+        .coach h3 {
+            margin-top: 15px;
+            font-size: 25px;
+            color: #d4af37;
+        }
+
+        /* BUTTONS */
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 13px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+            color: white;
+            background: #d4af37;
+        }
+
+        .btn.whatsapp {
+            background: #25D366;
+        }
+
+        .btn.instagram {
+            background: #c13584;
+        }
+
+        /* LOCATION */
+
+        .location {
+            text-align: center;
+        }
+
+        .location p {
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+
+        /* QR */
+
+        .qr-section {
+            text-align: center;
+            background: #111;
+        }
+
+        .qr-section img {
+            width: 280px;
+            max-width: 85%;
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+        .qr-section p {
+            color: #bbb;
+            margin-top: 15px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #050505;
+            border-top: 1px solid #333;
+            color: #999;
+        }
+
+        footer strong {
+            color: #d4af37;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .plans {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery img {
+                height: 250px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <img
+        src="{{ url_for('static', filename='images/gym_logo.jpg') }}"
+        class="logo"
+        alt="The Captain Gym Logo"
+    >
+
+    <h1>THE CAPTAIN GYM</h1>
+
+    <p>Fitness Center for Men & Women</p>
+
+</header>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <h2 class="title">ABOUT THE CAPTAIN GYM</h2>
+
+        <div class="card about">
+
+            <p>
+                Welcome to <strong>THE CAPTAIN GYM</strong>,
+                a fitness center dedicated to helping you build
+                strength, improve fitness and achieve a healthier lifestyle.
+            </p>
+
+            <br>
+
+            <p>
+                We provide strength training, cardio training,
+                personal training, body building, weight loss,
+                diet and nutrition guidance.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <h2 class="title">GYM GALLERY</h2>
+
+        <div class="gallery">
+
+            <img
+                src="{{ url_for('static', filename='images/gym_exterior.jpg.png') }}"
+                alt="Gym Exterior"
+            >
+
+            <img
+                src="{{ url_for('static', filename='images/gym_inside_1.jpg.jpeg') }}"
+                alt="Gym Interior"
+            >
+
+            <img
+                src="{{ url_for('static', filename='images/gym_inside_2.jpg.jpeg') }}"
+                alt="Gym Interior"
+            >
+
+            <img
+                src="{{ url_for('static', filename='images/gym_inside_3.jpg.jpeg') }}"
+                alt="Gym Interior"
+            >
+            <img
+             src="{{ url_for('static', filename='images/coach_satish.jpg.jpeg') }}"
+             alt="Coach Satish"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     GYM INFORMATION
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <h2 class="title">GYM INFORMATION</h2>
+
+        <div class="info-grid">
+
+            <div class="card info-card">
+
+                <h3>📍 Location</h3>
+
+                <p>
+                    Main Road, beside Old Bus Stand,
+                    Ramachandrapuram,
+                    Andhra Pradesh 533255
+                </p>
+
+            </div>
+
+
+            <div class="card info-card">
+
+                <h3>📞 Contact</h3>
+
+                <p>
+                    8985559727
+                </p>
+
+            </div>
+
+
+            <div class="card info-card">
+
+                <h3>🕐 Gym Timings</h3>
+
+                <p>
+                    Morning: 5:00 AM – 9:00 AM
+                    <br>
+                    Evening: 5:00 PM – 9:00 PM
+                </p>
+
+            </div>
+
+
+            <div class="card info-card">
+
+                <h3>💪 Training</h3>
+
+                <p>
+                    Strength Training<br>
+                    Cardio<br>
+                    Personal Training<br>
+                    Body Building<br>
+                    Weight Loss<br>
+                    Diet & Nutrition
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MEMBERSHIP PLANS
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <h2 class="title">MEMBERSHIP PLANS</h2>
+
+        <div class="plans">
+
+            <div class="plan">
+
+                <h3>STRENGTH</h3>
+
+                <div class="price">₹800</div>
+
+                <div class="month">per month</div>
+
+            </div>
+
+
+            <div class="plan">
+
+                <h3>STRENGTH + CARDIO</h3>
+
+                <div class="price">₹1000</div>
+
+                <div class="month">per month</div>
+
+            </div>
+
+
+            <div class="plan">
+
+                <h3>PERSONAL TRAINING</h3>
+
+                <div class="price">₹8000</div>
+
+                <div class="month">per month</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     COACH
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <h2 class="title">OUR COACH</h2>
+
+        <div class="coach">
+
+            <img
+                src="{{ url_for('static', filename='images/coach_satish.jpg.jpeg') }}"
+                alt="Coach Satish"
+            >
+
+            <h3>Coach Satish</h3>
+
+            <p>
+                Fitness Coach & Personal Training
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT / SOCIAL
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <h2 class="title">CONTACT US</h2>
+
+        <div class="buttons">
+
+            <a
+                class="btn"
+                href="tel:8985559727"
+            >
+                📞 Call Now
+            </a>
+
+
+            <a
+                class="btn whatsapp"
+                href="https://wa.me/918985559727"
+                target="_blank"
+            >
+                💬 WhatsApp
+            </a>
+
+
+            <a
+                class="btn instagram"
+                href="https://www.instagram.com/the_captaingym.rcpm/"
+                target="_blank"
+            >
+                📷 Instagram
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LOCATION
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <h2 class="title">FIND US</h2>
+
+        <div class="card location">
+
+            <p>
+                Main Road, beside Old Bus Stand,
+                Ramachandrapuram,
+                Andhra Pradesh 533255
+            </p>
+
+            <a
+                class="btn"
+                href="https://maps.app.goo.gl/b7bGz6TCUMSwnKfu8"
+                target="_blank"
+            >
+                📍 Open Google Maps
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     QR CODE
+===================================================== -->
+
+<section class="qr-section">
+
+    <div class="container">
+
+        <h2 class="title">SCAN & VISIT THE CAPTAIN GYM</h2>
+
+        <img
+            src="{{ url_for('static', filename='images/the_captain_gym_qr.png') }}"
+            alt="The Captain Gym QR Code"
+        >
+
+        <p>
+            Scan this QR code to view gym details,
+            photos, location and contact information.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <strong>THE CAPTAIN GYM</strong>
+
+    <br>
+
+    Fitness • Strength • Discipline • Health
+
+    <br><br>
+
+    © 2026 The Captain Gym
+
+</footer>
+
+
+</body>
+</html>
